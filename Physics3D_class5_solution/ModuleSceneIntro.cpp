@@ -17,7 +17,9 @@ bool ModuleSceneIntro::Start()
 	LOG("Loading Intro assets");
 	bool ret = true;
 
-	
+	float limit_mass = 30000.0f;
+	pb_limit1 = App->physics->AddBody(limit1, limit_mass);
+
 
 	App->camera->Move(vec3(1.0f, 1.0f, 0.0f));
 	App->camera->LookAt(vec3(0, 0, 0));
@@ -40,6 +42,10 @@ update_status ModuleSceneIntro::Update(float dt)
 	p.axis = true;
 	p.Render();
 
+	pb_limit1->GetTransform(&limit1.transform);
+	limit1.Render();
+
+	LOG("CAMERA POS: %.2f %.2f %.2f", App->camera->Position.x, App->camera->Position.y, App->camera->Position.z);
 	return UPDATE_CONTINUE;
 }
 

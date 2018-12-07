@@ -22,6 +22,10 @@ public:
 	void OnCollision(PhysBody3D* body1, PhysBody3D* body2);
 
 public:
+
+	PhysBody3D *pb_limit1 = nullptr;
+	Cube limit1 = Cube(2, 2, 2);
+
 	/*
 	PhysBody3D* pb_snake[MAX_SNAKE];
 	Sphere s_snake[MAX_SNAKE];
@@ -30,7 +34,7 @@ public:
 	Sphere s_snake2[MAX_SNAKE];
 	*/
 
-	PhysBody3D* pb_chassis;
+	/*PhysBody3D* pb_chassis;
 	Cube p_chassis;
 
 	PhysBody3D* pb_wheel;
@@ -40,5 +44,5 @@ public:
 	Cylinder p_wheel2;
 
 	PhysMotor3D* left_wheel;
-	PhysMotor3D* right_wheel;
+	PhysMotor3D* right_wheel;*/
 };
